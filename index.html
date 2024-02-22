@@ -4,23 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- end font -->
     <title>Document</title>
 </head>
 <body>
     
-    <section class="main">
-        <form action="">
-            <div class="form">
-                <label for="mail">Email</label>
-                <input type="email" id="email" placeholder="example@gmail.com" required>
-            </div>
-            <div class="button_mail">
-                <button type="submit">Veifica</button>
-            </div>
-        </form>
+    <section id="section_mail">
+        <div class="container">
+            <form class="form" action="">
+                <div class="box">
+                    <label for="mail">
+                        <img  src="./assets/img/gmail-logo-png-5a35539299a630.6695965315134442426294.jpg" alt="">
+                        <h1>Email</h1>
+                    </label>
+                    <input type="email" id="email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="button_mail">
+                    <button type="submit">Veifica</button>
+                </div>
+            </form>
+        </div>
+
         
     </section>
 
+    <section id="section_dadi">
+        <div class="container">
+            <form action="" class="form">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card-dadi">
+                            <img src="./assets/img/cartoon-dice_78370-2910.avif" alt="">
+                            <button type="submit">clicca per far girare il tuo dado</button>
+                        </div>
+                        <div class="card-dadi">
+                            <img src="./assets/img/cartoon-dice_78370-2910.avif" alt="">
+                            <span>il mio dado lo tiro da solo</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="result">
+                            <div class="user_result">lorem</div>
+                            <div class="computer_result">lorem</div>
+                        </div> 
+                        <div class="winner">
+                            <img src="./assets/img/kisspng-award-cup-clip-art-cup-5ab4cdcc99db83.7328630715217986046302.jpg" alt="">
+                            <h1>WINNER: you</h1>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>

@@ -4,6 +4,8 @@ console.log('ciao');
 const elementMail = document.getElementById("email");
 console.log(elementMail);
 
+
+const elementContainer =document.getElementById('section_mail')
 // creo la mia array di email
 const listEmail = ['pippo@gmail.com', 'pluto@gmail.com', 'gennaro@gmail.com', 'geronimo@libero.it', 'stilton@libero.it'];
 console.log(listEmail)
@@ -20,10 +22,19 @@ document.querySelector('form').addEventListener('submit',function(e){
         const element = listEmail[index];
         console.log(element)
         if (userMail == element) {
-            prompt('ciao')
-        }else{
-            alert('ciao')
+            
+            const markupVerify = `
+            <div class="container box-standard bg-blue">
+                <div id="positive">
+                    <h1>E stato convalidato la tua email</h1>
+                </div>
+            </div>
+            `
+            elementContainer.innerHTML = markupVerify;
+
         }
     }
 
 })
+
+

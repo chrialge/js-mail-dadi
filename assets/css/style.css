@@ -1,3 +1,146 @@
-body{
-    background-color: green;
+/* region common */
+:root{
+    --mail-bg-primary : #cab577;
+    --dadi-bg-primary : #7e4a35;
 }
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto", sans-serif;
+}
+.col-6{
+    width: 50%;
+}
+ /* section mail */
+ #section_mail{
+    background-color: var(--mail-bg-primary);
+    padding: 50px 0;
+    & .container{
+        max-width: 1000px;
+        width: 80%;
+        margin: auto;
+        background-color: white;
+        border-radius: 10px;
+        padding: 50px 0;
+        box-shadow: 1px 1px 5px;
+        
+        & .form{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            & .box {
+                padding-bottom: 50px;
+
+                & label {
+                    display: flex;
+                    margin-bottom: 50px; 
+                    justify-content: center;
+                    & img{
+                        width: 80px;
+                        object-fit: cover;
+                        background-color: white;
+                    }
+                    h1{
+                        font-size: 50px;
+                        color : #c94c4c;
+                    }
+                }
+                & #email{
+                    width: 400px;
+                    padding: 5px;
+                    border-radius: 5px;
+                    border: 1px solid gray;
+                    outline: solid #c94c4c;
+
+                }
+            }
+
+            & .button_mail{
+                & button{
+                    padding: 5px;
+                    font-size: 18px;
+                    font-weight: 700;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: gray;
+
+                
+                }
+                & button:hover{
+                    background-color: #c94c4c;
+                    color: white;
+                    border: none;
+                }
+
+            }
+            
+        }
+    }
+ }
+
+ /* positive */
+ #section_mail{
+    &  .box-standard{
+
+        font-size: 40px;
+        text-align: center;
+        color: white;
+    }
+    & .bg-blue{
+        background-color: #034f84;
+    }
+    & .bg-red{
+        background-color: #c94c4c;
+    }
+ }
+
+
+ /* section dadi */
+ #section_dadi{
+    background-color: var(--dadi-bg-primary);
+    padding: 50px 0;
+    & .container{
+        max-width: 1000px;
+        width: 80%;
+        margin: auto;
+        background-color: white;
+        border-radius: 10px;
+        padding: 50px 0;
+        box-shadow: 1px 1px 5px;
+        & .form{
+            & .row{
+                display: flex;
+                & .card-dadi{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+                    & img{
+                        width: 100px;
+                    }
+                }
+                & .result{
+                    display: flex;
+                    justify-content: center;
+                    gap: 8rem;
+                    margin-bottom: 50px;
+                }
+                & .winner{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    & img{
+                    width: 100px;
+                }
+            }
+            }
+
+
+        }
+    }
+
+ }
