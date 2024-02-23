@@ -30,7 +30,7 @@ document.getElementById('mail').addEventListener('submit',function(e){
         if (userMail === listEmail[index]) {
            trovato = true
 
-
+            break;
         }
     }
     console.log(trovato)
