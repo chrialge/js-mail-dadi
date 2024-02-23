@@ -10,6 +10,11 @@ const elementContainer =document.getElementById('section_mail')
 const listEmail = ['pippo@gmail.com', 'pluto@gmail.com', 'gennaro@gmail.com', 'geronimo@libero.it', 'stilton@libero.it'];
 console.log(listEmail)
 
+let markupVerify 
+let markupCancel 
+let trovato = false
+
+
 // chiamare il form e farlo funzionare quando clicco sul bottone
 document.getElementById('mail').addEventListener('submit',function(e){
     e.preventDefault();
@@ -18,8 +23,6 @@ document.getElementById('mail').addEventListener('submit',function(e){
     const userMail = elementMail.value;
     console.log(userMail)
 
-    let markupVerify 
-    let markupCancel 
 
 
     
@@ -27,9 +30,15 @@ document.getElementById('mail').addEventListener('submit',function(e){
         const element = listEmail[index];
 
         console.log(element)
-        if (userMail == listEmail[index]) {
-            
-            markupVerify = `
+        if (userMail === listEmail[index]) {
+           trovato = true
+
+
+        }
+    }
+    console.log(trovato)
+    if(trovato == true){
+        markupVerify = `
             <div class="container box-standard bg-blue">
                 <div id="positive">
                     <img src="./assets/img/99460655-pollice-in-su-mi-piace-sì-icona-vettore.jpg" alt="">
@@ -37,21 +46,22 @@ document.getElementById('mail').addEventListener('submit',function(e){
                 </div>
             </div>
             `
-
-
-        }else{
-            markupCancel= `
-            <div class="container box-standard bg-red">
-                <div id="positive">
-                    <img src="./assets/img/kisspng-thumb-signal-red-clip-art-thumbs-down-5b2158e1794d49.0799787115289120974969.jpg" alt="">
-                    <h1>La tua email non e convalidata</h1>
-                </div>
+    }else{
+        markupCancel= `
+        <div class="container box-standard bg-red">
+            <div id="positive">
+                <img src="./assets/img/kisspng-thumb-signal-red-clip-art-thumbs-down-5b2158e1794d49.0799787115289120974969.jpg" alt="">
+                <h1>La tua email non e convalidata</h1>
             </div>
-            `
-        }
+        </div>
+        `;
     }
-    elementContainer.innerHTML = markupVerify;
+    
+    console.log(markupCancel)
     elementContainer.innerHTML = markupCancel;
+    elementContainer.innerHTML = markupVerify;
+    
+
 
 
 
