@@ -2,14 +2,14 @@ console.log('ciao');
 
 // variabile per email
 const elementMail = document.getElementById("email");
-console.log(elementMail);
+
 
 
 const elementContainer =document.getElementById('section_mail')
 // creo la mia array di email
 const listEmail = ['pippo@gmail.com', 'pluto@gmail.com', 'gennaro@gmail.com', 'geronimo@libero.it', 'stilton@libero.it'];
-console.log(listEmail)
 
+// variabile di markup e di una variabile booleana
 let markupVerify 
 let markupCancel 
 let trovato = false
@@ -21,15 +21,12 @@ document.getElementById('mail').addEventListener('submit',function(e){
 
     // prendo il valore di email e la racchiudo in una variabile
     const userMail = elementMail.value;
-    console.log(userMail)
 
-
-
-    
+    // ciclo per vedere se esiste nella mia array la mail
     for (let index = 0; index < listEmail.length; index++) {
         const element = listEmail[index];
 
-        console.log(element)
+        // se viene trovata il valore di trovato sara true
         if (userMail === listEmail[index]) {
            trovato = true
 
@@ -37,6 +34,8 @@ document.getElementById('mail').addEventListener('submit',function(e){
         }
     }
     console.log(trovato)
+
+    // se trovato e true viene inserito questo
     if(trovato == true){
         markupVerify = `
             <div class="container box-standard bg-blue">
@@ -46,7 +45,8 @@ document.getElementById('mail').addEventListener('submit',function(e){
                 </div>
             </div>
             `
-    }else{
+            elementContainer.innerHTML = markupVerify;
+    }else{//altrimenti viene inserito questo
         markupCancel= `
         <div class="container box-standard bg-red">
             <div id="positive">
@@ -55,36 +55,35 @@ document.getElementById('mail').addEventListener('submit',function(e){
             </div>
         </div>
         `;
+    elementContainer.innerHTML = markupCancel;
+
     }
     
-    console.log(markupCancel)
-    elementContainer.innerHTML = markupCancel;
-    elementContainer.innerHTML = markupVerify;
-    
-
-
-
-
-
 })
+
+
+
+
+// section dadi
+// variiabile per selezionare una parte del html
 const elementWinner = document.querySelector('.winner')
 const elementYouResult = document.querySelector('.user_result')
 const elementComResult = document.querySelector('.computer_result')
 
+// quando il form dei daddi clicca su "clicca per far girare dadi"
 document.getElementById('dadi').addEventListener('submit', function(e){
     e.preventDefault();
 
+    // variabili per creare numeri random dei dai
     const userNumber = Math.floor(Math.random() * 6) + 1;
     const computerNumber = Math.floor(Math.random() * 6) + 1;
     console.log(userNumber, computerNumber);
 
-    const markupComResult =`
-
-    `
+    // inserire i risultati dei dadi
     elementComResult.innerHTML = computerNumber;
     elementYouResult.innerHTML = userNumber;
 
-    
+    // SE il numero del giocato e maggiore di quello del com stampa questo
     if (userNumber > computerNumber) {
         const markupWinner = `
         <img src="./assets/img/kisspng-award-cup-clip-art-cup-5ab4cdcc99db83.7328630715217986046302.jpg" alt="">
@@ -93,6 +92,7 @@ document.getElementById('dadi').addEventListener('submit', function(e){
         elementWinner.innerHTML = markupWinner;
         console.log('winner you')
     } else if(userNumber < computerNumber) {
+        // ALTRIMENTI SE il numero del giocato e minore di quello del com stampa questo
         const markupWinner = `
         <img src="./assets/img/kisspng-award-cup-clip-art-cup-5ab4cdcc99db83.7328630715217986046302.jpg" alt="">
         <h1 class="com-color">WINNER: com</h1>
@@ -100,6 +100,7 @@ document.getElementById('dadi').addEventListener('submit', function(e){
         elementWinner.innerHTML = markupWinner;
         console.log('winner com');
     }else{
+        // ALTRIMENTI stampa questo
         const markupWinner = `
         <img src="./assets/img/you-lose-black-stamp-sticker-260nw-1318551647.webp" alt="">
         <h1 class="lose-color">loser</h1>
